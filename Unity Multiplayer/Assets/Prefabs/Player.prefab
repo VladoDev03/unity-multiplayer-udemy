@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2066300173
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 9d8bd4f8481a773488649b18bd02cbc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2066300173
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 8769e4453ce5bc3429cfba7d58fbef13, type: 3}
   m_Color: {r: 0.25882354, g: 0.40784314, b: 0.8235294, a: 1}
@@ -522,6 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileLauncher
   ShowTopMostFoldoutHeaderGroup: 1
   inputReader: {fileID: 11400000, guid: c6148b9d53b03a9468da284269dc6c8a, type: 2}
+  wallet: {fileID: 5505609508546920746}
   projectileSpawnPoint: {fileID: 8290905430958225649}
   serverProjectilePrefab: {fileID: 6800911279807046281, guid: 64966635e613ce442b8d204f5326f040, type: 3}
   clientProjectilePrefab: {fileID: 33805143261244597, guid: c2f68dfaf7ddfbf409f472ef739312c8, type: 3}
@@ -530,6 +531,7 @@ MonoBehaviour:
   projectileSpeed: 30
   fireRate: 0.75
   muzzleFlashDuration: 0.075
+  costToFire: 5
 --- !u!114 &6150584752045322634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +717,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2066300173
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 200
   m_Sprite: {fileID: 21300000, guid: a94bf141bd2044c4399e321445c83112, type: 3}
   m_Color: {r: 0.25882354, g: 0.40784314, b: 0.8235294, a: 1}
@@ -808,7 +810,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2066300173
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1a838243856331f4681c559527ad5846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
