@@ -1,16 +1,21 @@
 using System;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class NetworkServer
+public class NetworkServer : IDisposable
 {
     private NetworkManager networkManager;
+
+    private Dictionary<ulong, string> clientIdToAtuh = new Dictionary<ulong, string>();
+    private Dictionary<string, UserData> authIdToUserData = new Dictionary<string, UserData>();
 
     public NetworkServer(NetworkManager networkManager)
     {
         this.networkManager = networkManager;
 
         networkManager.ConnectionApprovalCallback += ApprovalCheck;
+        networkManager.OnServerStarted += OnNetwrokReady;
     }
 
     private void ApprovalCheck(
@@ -21,9 +26,41 @@ public class NetworkServer
         string payload = System.Text.Encoding.UTF8.GetString(request.Payload);
         UserData userData = JsonUtility.FromJson<UserData>(payload);
 
-        Debug.Log(userData.userName);
+        clientIdToAtuh[request.ClientNetworkId] = userData.userAuthId;
+        authIdToUserData[userData.userAuthId] = userData;
 
         response.Approved = true;
         response.CreatePlayerObject = true;
+    }
+
+    private void OnNetwrokReady()
+    {
+        networkManager.OnClientDisconnectCallback += OnClientDisconnect;
+    }
+
+    private void OnClientDisconnect(ulong clientId)
+    {
+        if (clientIdToAtuh.TryGetValue(clientId, out string authId))
+        {
+            clientIdToAtuh.Remove(clientId);
+            authIdToUserData.Remove(authId);
+        }
+    }
+
+    public void Dispose()
+    {
+        if (networkManager == null)
+        {
+            return;
+        }
+
+        networkManager.ConnectionApprovalCallback -= ApprovalCheck;
+        networkManager.OnServerStarted -= OnNetwrokReady;
+        networkManager.OnClientDisconnectCallback -= OnClientDisconnect;
+
+        if (networkManager.IsListening)
+        {
+            networkManager.Shutdown();
+        }
     }
 }
