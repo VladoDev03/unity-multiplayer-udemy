@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3872158403
+  GlobalObjectIdHash: 89027571
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -862,6 +862,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinWallet
   ShowTopMostFoldoutHeaderGroup: 1
+  health: {fileID: 6150584752045322634}
+  coinPrefab: {fileID: 8623714950686664649, guid: 4180884f40c8e8844ba2ef84d0d62531, type: 3}
+  coinSpread: 3
+  bountyPercentage: 50
+  bountyCoinCount: 10
+  minBountyCoinValue: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   TotalCoins:
     m_InternalValue: 0
 --- !u!1 &7554195645336376849

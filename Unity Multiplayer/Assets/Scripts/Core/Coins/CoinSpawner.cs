@@ -11,7 +11,6 @@ public class CoinSpawner : NetworkBehaviour
     [SerializeField] private LayerMask layerMask;
 
     private Collider2D[] coinBuffer = new Collider2D[1];
-
     private float coinRadius;
 
     public override void OnNetworkSpawn()
