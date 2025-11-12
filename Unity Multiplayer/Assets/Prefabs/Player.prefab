@@ -738,6 +738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TankPlayer
   ShowTopMostFoldoutHeaderGroup: 1
   virtualCamera: {fileID: 8411323201943999179}
+  <Health>k__BackingField: {fileID: 6150584752045322634}
   ownerPriority: 15
   PlayerName:
     m_InternalValue:
