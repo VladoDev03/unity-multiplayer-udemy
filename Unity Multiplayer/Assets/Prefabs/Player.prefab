@@ -739,6 +739,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   virtualCamera: {fileID: 8411323201943999179}
   <Health>k__BackingField: {fileID: 6150584752045322634}
+  <Wallet>k__BackingField: {fileID: 5505609508546920746}
   ownerPriority: 15
   PlayerName:
     m_InternalValue:
