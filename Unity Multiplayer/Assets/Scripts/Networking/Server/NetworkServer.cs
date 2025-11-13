@@ -7,6 +7,8 @@ public class NetworkServer : IDisposable
 {
     private NetworkManager networkManager;
 
+    public Action<string> OnClientLeft;
+
     private Dictionary<ulong, string> clientIdToAtuh = new Dictionary<ulong, string>();
     private Dictionary<string, UserData> authIdToUserData = new Dictionary<string, UserData>();
 
@@ -46,6 +48,7 @@ public class NetworkServer : IDisposable
         {
             clientIdToAtuh.Remove(clientId);
             authIdToUserData.Remove(authId);
+            OnClientLeft?.Invoke(authId);
         }
     }
 
