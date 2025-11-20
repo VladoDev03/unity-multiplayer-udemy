@@ -1,0 +1,8 @@
+# Show ONLY C# as the detectable language
+*.cs linguist-detectable=true
+
+# Hide ShaderLab and shader-related languages
+*.shader linguist-detectable=false
+*.cginc linguist-detectable=false
+*.hlsl linguist-detectable=false
+*.glsl linguist-detectable=false
